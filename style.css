@@ -1,1 +1,32 @@
+*{
 
+margin:0;
+  padding:0;
+  font-family:'Poppins',sans-serif;
+  box-sizing:border-box;
+}
+
+
+body
+{
+  background:#f7edff;
+
+}
+
+.buttons
+{
+  margin:50 px;
+}
+.buttons button
+{
+  background:#333;
+  color:Black;
+  width:120 px;
+  outline:0;
+  border-radius:5 px;
+  height:40 px;
+  cursor:pointer;
+
+
+}
+  
