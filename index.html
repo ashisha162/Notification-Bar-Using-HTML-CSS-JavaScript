@@ -6,13 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="style.css">
     <title>Toast Notification</title>
+    <script src="https://kit.fontawesome.com/d3d1785d52.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
  <div class="buttons">
-   <button>Success</button>
-   <button>Error</button>
-   <button>Invalid</button>
+   <button onClick="showToast(successMsg)">Success</button>
+   <button onClick="ShowToast(errorMsg)">Error</button>
+   <button onClick="ShowToast(invalidMsg)">Invalid</button>
  </div>
-  <div.toast-box></div.toast-box>
+  <div id="toastBox">
+      
+  </div>
+    <script>
+ let toastBox=document.getElementById('toastBox')
+        let successMsg= '<i class="fa-regular fa-circle-check"></i>Successfully Submited';
+          let errorMsg='<i class="fa-solid fa-circle-xmark"></i>Please Fix the error';
+          let invalidMsg='<i class="fa-solid fa-circle-exclamation"></i>Invalid input';
+function ShowToast(msg)
+    {
+       let toast= document.createElement('div');
+        toast.classList.add('toast')
+        toast.innerHTML=msg;
+        toastBox.appendChild(toast);
+
+        if(msg.includes('error'))
+        {
+            toast.classList.add('error');
+        }
+
+         if(msg.includes('Invalid'))
+        {
+            toast.classList.add('invalid');
+        }
+
+        setTimeout(() => {
+            toast.remove();
+        },6000)
+
+    }
+        
+        
+        
+        
+
+        
+    </script>
 </body>
+    
 </html>
